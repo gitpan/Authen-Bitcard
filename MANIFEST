@@ -1,0 +1,18 @@
+Build.PL
+MANIFEST			This list of files
+META.yml
+README
+Makefile.PL
+
+t/10config.t
+t/11verify.t
+t/13podcoverage.t
+t/15pod.t
+
+LICENSE
+NOTICE
+
+lib/Authen/Bitcard.pm
+
+
+SIGNATURE    Added here by Module::Build

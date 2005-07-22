@@ -1,0 +1,36 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.44.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 7b7fd4775871de60c45021dad1f1e532b1c399e5 Build.PL
+SHA1 2b8b815229aa8a61e483fb4ba0588b8b6c491890 LICENSE
+SHA1 d4feb76542686bbe21d5ee1c7ec3bd2f244225f2 MANIFEST
+SHA1 105bf7ba974ca5cd0a59ca76edd8910d1896d30e META.yml
+SHA1 51946aa72b97d83b4721a5137130430adff6d84b Makefile.PL
+SHA1 9c8759b5bfe3c18c6e5bab45488f978c725390d8 NOTICE
+SHA1 79fdd5924e2c5640303029335c5f1bcbdd855ccc README
+SHA1 c1a2afdecd17c9f18c6930dbbb8a67f3e1f45857 lib/Authen/Bitcard.pm
+SHA1 9e78a78ca929be87044dae2395786d7019949b29 t/10config.t
+SHA1 c0b8b4d45c725e36f021601835220e246ef48ec9 t/11verify.t
+SHA1 5509b90dc0bf9b2b4a66ac3c57951982527eccd0 t/13podcoverage.t
+SHA1 e9c6a5881fc60173fbc8d479c1afd2ce3b43bef1 t/15pod.t
+-----BEGIN PGP SIGNATURE-----
+
+iQCVAwUBQuC/x/koKP1ixIspAQI1iwQAtbcLQgj50FmKhoU2Z0DNogYMGbWYX8Er
++CKY3fqlcyNGKXw5WvewIjoOqXy1+pZA1I0/PyRdpaKvaVu0zduTuYJV/Se4B0JN
+nD459NB7Sm3LpeXTaj16wzEkkYxnyov0cZiNSChn368/FZGVw4IuTPvurkg/qsXt
+CBlpnWK210A=
+=feai
+-----END PGP SIGNATURE-----
