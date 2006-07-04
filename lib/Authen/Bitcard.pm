@@ -10,7 +10,7 @@ use HTTP::Status qw( RC_NOT_MODIFIED );
 use URI;
 use URI::QueryParam;
 
-our $VERSION = '0.85';
+our $VERSION = '0.86';
 
 sub new {
     my $class = shift;
@@ -18,7 +18,7 @@ sub new {
     $bc->skip_expiry_check(0);
     $bc->expires(600);
     $bc->bitcard_url('https://www.bitcard.org/');
-    $bc->version(3);
+    $bc->version(4);
     $bc->token('');
     my %args = @_;
     for my $k (keys %args) {
@@ -78,6 +78,10 @@ sub account_url {
   shift->_url('account', @_)
 }
 
+sub register_url {
+  shift->_url('register', @_)
+}
+
 sub verify {
     my $bc = shift;
     my %data;
@@ -120,6 +124,17 @@ sub verify {
       my $nk = $k;
       $nk =~ s/^bc_//;
       $data{$nk} = delete $data{$k};
+    }
+
+    if ($bc->version >= 4) {
+      unless ($data{version} == $bc->version) {
+        $data{version} =~ s/\D//g; 
+        return $bc->error(sprintf "Expected Bitcard protocol version [%i], got version [%i].", $bc->version, $data{version});
+      }
+
+      unless ($data{confirmed}) {
+        return $bc->error('Account not confirmed');
+      }
     }
 
     \%data;
@@ -236,6 +251,11 @@ the user back to after logging out.
 
 Returns the URL the user can edit his Bitcard account information at.
 Also needs the C<r> parameter like C<login_url> and C<logout_url>.
+
+=head2 $bc->register_url( r => $return_url )
+
+Returns the URL for a user to register a new Bitcard account.  Also
+needs the C<r> parameter as above.
 
 =head2 $bc->key_url()
 

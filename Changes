@@ -1,0 +1,13 @@
+0.86 - July 3rd 2006
+  - Add the Changes file to the distribution
+  - register_url method
+  - bump version to 4
+  - prepare to support "unconfirmed users"
+
+0.85 - July 21th 2005
+  - New API, works with http://www.bitcard.org/
+
+0.50 - July 3rd 2004
+  - Initial release
+
+

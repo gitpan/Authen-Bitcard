@@ -11,6 +11,7 @@ plan tests => 4 + 1*@urls;
 use_ok('Authen::Bitcard', 'load module');
 ok(my $bc = Authen::Bitcard->new( bitcard_url => 'http://test.bitcard.org/' ), "new");
 ok($bc->token('731f1d4110b4d03d6c65cd8df408c2'), 'token');
+$bc->version(3);
 $bc->key_cache(sub { &__bitcard_key });
 ok($bc->skip_expiry_check(1), 'skip_expiry_check');
 # $bc->info_required('email,username,name');

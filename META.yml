@@ -1,8 +1,17 @@
---- #YAML:1.0
-name: Authen-Bitcard
-version: 0.85
-author:
-  - Ask Bjoern Hansen <ask@develooper.com>
-abstract: Bitcard authentication verification
-license: open_source
-generated_by: Module::Build version 0.2611, without YAML.pm
+# http://module-build.sourceforge.net/META-spec.html
+#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
+name:         Authen-Bitcard
+version:      0.86
+version_from: lib/Authen/Bitcard.pm
+installdirs:  site
+requires:
+    Digest::SHA1:                  0
+    HTTP::Status:                  0
+    LWP::UserAgent:                0
+    Math::BigInt:                  0
+    MIME::Base64:                  0
+    Test::More:                    0
+    URI:                           1.22
+
+distribution_type: module
+generated_by: ExtUtils::MakeMaker version 6.17

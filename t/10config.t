@@ -7,10 +7,11 @@ ok($bc->bitcard_url('http://test.bitcard.org/'), 'set bitcard_url');
 ok($bc->token('a077fbb7942cbeb296dbac1de20020'), 'token');
 ok(my $lurl = $bc->login_url(r => 'http://example.com/'), 'get login_url');
 
-my $u = URI->new('http://test.bitcard.org/login?bc_v=3&bc_r=http%3A%2F%2Fexample.com%2F&bc_t=a077fbb7942cbeb296dbac1de20020');
+#my $u = URI->new('http://test.bitcard.org/login?bc_v=4&bc_r=http%3A%2F%2Fexample.com%2F&bc_t=a077fbb7942cbeb296dbac1de20020');
+my $u = URI->new($lurl);
 
 is_deeply({ $u->query_form },
-	  +{ bc_v => 3,
+	  +{ bc_v => 4,
 	     bc_r => 'http://example.com/',
 	     bc_t => 'a077fbb7942cbeb296dbac1de20020'
 	   },
