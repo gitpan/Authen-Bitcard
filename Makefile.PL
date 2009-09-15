@@ -16,6 +16,7 @@ WriteMakefile(
                   'LWP::UserAgent' => 0,
                   'HTTP::Status'   => 0,
                   'URI'            => 1.22,
+                  'Class::ErrorHandler' => 0,
     },
     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
 );

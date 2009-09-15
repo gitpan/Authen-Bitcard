@@ -50,11 +50,34 @@ USAGE
     Returns the URL the user can edit his Bitcard account information at.
     Also needs the "r" parameter like "login_url" and "logout_url".
 
+  $bc->register_url( r => $return_url )
+    Returns the URL for a user to register a new Bitcard account. Also needs
+    the "r" parameter as above.
+
   $bc->key_url()
     Get the URL from which the Bitcard public key can be obtained.
 
   $bc->info_required(  $string | [ array ref ] )
+    With info_required you specify what user data you require. The possible
+    fields are "username", "name" and "email" (see "verify" for more
+    information).
+
+    The method takes either a comma seperated string or a reference to an
+    array.
+
+    This must be called before "login_url".
+
+    NOTE: "name" is currently not implemented well in the Bitcard server, so
+    we recommend you require "username", but mark "name" as optional if you
+    want the "display name" of the user returned.
+
   $bc->info_optional( $string | [ array ref ] )
+    As "info_required" except the Bitcard server will ask the user to allow
+    the information to be forwarded, but not require it to proceed.
+
+    The Bitcard server will always have a confirmed email address on file
+    before letting a user login.
+
   $bc->verify($query)
     Verify a Bitcard signature based on the other parameters given. The
     signature and other parameters are found in the *$query* object, which
@@ -67,6 +90,10 @@ USAGE
     * id
         The unique user id of the Bitcard user on your site. It's a 128bit
         number as a 40 byte hex value.
+
+        The id is always returned when the verification was successful (all
+        other user data fields are optional, see "info_required" and
+        "info_optional").
 
     * username
         The unique username of the Bitcard user.
@@ -123,7 +150,7 @@ LICENSE
     modify it under the same terms as Perl itself.
 
 AUTHOR & COPYRIGHT
-    Except where otherwise noted, *Authen::Bitcard* is Copyright 2004-2005
+    Except where otherwise noted, *Authen::Bitcard* is Copyright 2004-2006
     Develooper LLC, ask@develooper.com.
 
     Parts are Copyright 2004 Six Apart Ltd, cpan@sixapart.com.

@@ -10,7 +10,7 @@ use HTTP::Status qw( RC_NOT_MODIFIED );
 use URI;
 use URI::QueryParam;
 
-our $VERSION = '0.86';
+our $VERSION = '0.87';
 
 sub new {
     my $class = shift;
@@ -375,7 +375,7 @@ under the same terms as Perl itself.
 =head1 AUTHOR & COPYRIGHT
 
 Except where otherwise noted, I<Authen::Bitcard> is Copyright
-2004-2005 Develooper LLC, ask@develooper.com.
+2004-2006 Develooper LLC, ask@develooper.com.
 
 Parts are Copyright 2004 Six Apart Ltd, cpan@sixapart.com.
 
