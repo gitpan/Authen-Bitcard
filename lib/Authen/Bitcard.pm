@@ -1,6 +1,6 @@
 package Authen::Bitcard;
 BEGIN {
-  $Authen::Bitcard::VERSION = '0.89';
+  $Authen::Bitcard::VERSION = '0.90';
 }
 use strict;
 use base qw( Class::ErrorHandler );
@@ -303,7 +303,7 @@ With info_required you specify what user data you require.  The
 possible fields are "username", "name" and "email" (see C<verify> for
 more information).
 
-The method takes either a comma seperated string or a reference to an
+The method takes either a comma separated string or a reference to an
 array.
 
 This must be called before C<login_url>.

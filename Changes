@@ -1,4 +1,8 @@
 
+0.90    June 11, 2011
+  - Make sure LWP is installed with https support
+  - Fix spelling error in documentation (Ansgar Burchardt, RT#60022)
+
 0.89    August 2, 2010
   - Use JSON instead of JSON::XS
   - Use Digest::SHA instead of Digest::SHA1 (RT#59919, Ansgar Burchardt)

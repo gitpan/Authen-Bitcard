@@ -26,12 +26,13 @@ my %WriteMakefileArgs = (
     'Digest::SHA' => '0',
     'HTTP::Status' => '0',
     'JSON' => '2.12',
+    'LWP::Protocol::https' => '0',
     'LWP::UserAgent' => '0',
     'MIME::Base64' => '0',
     'Math::BigInt' => '0',
     'URI' => '1.22'
   },
-  'VERSION' => '0.89',
+  'VERSION' => '0.90',
   'test' => {
     'TESTS' => 't/*.t'
   }

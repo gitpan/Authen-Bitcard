@@ -62,7 +62,7 @@ USAGE
     fields are "username", "name" and "email" (see "verify" for more
     information).
 
-    The method takes either a comma seperated string or a reference to an
+    The method takes either a comma separated string or a reference to an
     array.
 
     This must be called before "login_url".
